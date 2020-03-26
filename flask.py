@@ -1,4 +1,4 @@
-# 1. import Flask
+# Import Flask
 from flask import Flask
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -8,11 +8,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 2. Create an app
+# Create an app
 app = Flask(__name__)
 
-# 3. Define what to do when a user hits the index route
-
+# Define what to do when a user hits the index route
 @app.route("/")
 def allroutes():
     return (
@@ -48,11 +47,10 @@ def stations():
 
     return jsonify(last_twelve_list)
 
-
-#similar to last query analysis from starter code
+# Query analysis
 @app.route("/api/v1.0/<start>")
 def stations():
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+    if __name__ == "__main__":
+        app.run(debug=True)
